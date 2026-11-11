@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIFSLB · Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua</title>
+    <meta name="description" content="Sitio de la Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua.">
+    <link rel="icon" href="imagenes/logo uni.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="top" id="top">
+        <nav class="menu" aria-label="Principal">
+            <a class="marca" href="#inicio"><img src="imagenes/logo uni.png" alt="Escudo UNIFSLB"><span>UNIFSLB</span></a>
+            <div class="enlaces">
+                <a href="#identidad">Identidad</a>
+                <a href="#noticias">Noticias</a>
+                <a href="#contacto">Contacto</a>
+                <button id="btn-tema" class="tema" aria-label="Cambiar a modo oscuro" title="Cambiar tema">🌙</button>
+            </div>
+        </nav>
+
+        <section class="hero" id="inicio">
+            <div class="hero-texto">
+                <h1>Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua</h1>
+                <p>Formamos profesionales que honran la diversidad de los pueblos amazónicos.</p>
+                <div class="acciones">
+                    <a class="boton" href="#noticias">Ver noticias</a>
+                    <button id="btn-saludo" class="boton boton-claro">Saludar</button>
+                </div>
+                <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section class="cifras" aria-label="Datos de la universidad">
+            <div><strong data-meta="4">0</strong><span>congreso internacional de investigación</span></div>
+            <div><strong data-meta="3">0</strong><span>novedades académicas recientes</span></div>
+            <div><strong data-meta="100" data-sufijo="%">0</strong><span>enfoque intercultural</span></div>
+        </section>
+
+        <section id="identidad" class="seccion identidad">
+            <div class="identidad-foto">
+                <img src="https://scontent.ftru3-1.fna.fbcdn.net/v/t39.99422-6/862348777_1803767904108258_2186278362205565792_n.png?stp=dst-jpg_tt6&cstp=mx2048x1674&ctp=s2048x1674&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=M2r8JLwonN8Q7kNvwHVJXkF&_nc_oc=Adrvtj5v-cD41QLnChHSKOHyCVC1PxJxlPxv28cAaAn8P1PsbM_X0_0Hj5kcKtjFy6Zp2J6jGybj_bNgPzqJRdqE&_nc_zt=14&_nc_ht=scontent.ftru3-1.fna&_nc_gid=5XJQv9Ca6tF4hpWNyHDRbw&_nc_ss=7b2a8&oh=00_AQRqlXgI6BxpTOosJV32DRbmEdykMKnJtQHbu1-wb06cZw&oe=6AF9CC0A"
+                    alt="Estudiantes frente a los pabellones del campus" loading="lazy">
+            </div>
+            <div>
+                <h2>Una universidad que se viste de su gente</h2>
+                <p>En Bagua, la educación superior se construye con la lengua, la historia y los saberes de las comunidades. Nuestro escudo une los colores de la región con la figura que representa nuestra raíz amazónica.</p>
+                <p>Conoce el campus, a nuestros estudiantes y las actividades que impulsan la investigación y la formación docente.</p>
+                <img class="escudo" src="imagenes/logo uni.png" alt="Escudo de la UNIFSLB" loading="lazy">
+            </div>
+        </section>
+
+        <section id="noticias" class="seccion">
+            <div class="cabecera-sec">
+                <h2>Noticias y eventos</h2>
+                <div class="filtros" role="group" aria-label="Filtrar noticias">
+                    <button class="filtro activo" data-filtro="todas">Todas</button>
+                    <button class="filtro" data-filtro="investigacion">Investigación</button>
+                    <button class="filtro" data-filtro="formacion">Formación</button>
+                </div>
+            </div>
+
+            <div class="galeria">
+                <figure class="tarjeta" data-cat="investigacion" tabindex="0">
+                    <img src="https://scontent.ftru1-1.fna.fbcdn.net/v/t39.99422-6/900639357_1654690449479982_6782868619191943520_n.png?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=105&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=z0ZPxXG-5bQQ7kNvwE2DjRy&_nc_oc=AdpJ3Z1VCZ6F16CnJgG0haa6vNF4EynwcvTK2R0NKgQFKGOx5TNe7_6wL4ZPGPW5rZrDt2bhEuRVF_Zb2rVUBwVO&_nc_zt=14&_nc_ht=scontent.ftru1-1.fna&_nc_gid=IiXzsqM54L46daYH80n_Kg&_nc_ss=7b2a8&oh=00_AQTrqBmbwhNSrBYU2tiAiM8tOtoPuat4JC0bZfAd6yTuGA&oe=6AF9719E"
+                        alt="Afiche del IV Congreso Internacional" loading="lazy">
+                    <figcaption><span class="etiqueta">Investigación</span>IV Congreso Internacional de Investigación Científica con Enfoque Intercultural</figcaption>
+                </figure>
+                <figure class="tarjeta" data-cat="formacion" tabindex="0">
+                    <img src="https://scontent.ftru1-1.fna.fbcdn.net/v/t39.99422-6/856192624_1622438006037577_2968680271141352909_n.png?stp=dst-jpg_tt6&cstp=mx2048x1674&ctp=s2048x1674&_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=fG0qwF3G76cQ7kNvwFelyZl&_nc_oc=AdocrUPu4p5l35haBOHpux6II3dxcHAH1PqqCt-4ZNBtfG6hAQX6ACUrRrS75v8wnr2-V1PpRMJSx0_36HJL8DH9&_nc_zt=14&_nc_ht=scontent.ftru1-1.fna&_nc_gid=53kusXJNy5u7AphcLNphIg&_nc_ss=7b2a8&oh=00_AQRhyNrspeG8VnaN_W0YyyV6I3A3X-g45K4PeqtLSxiGBQ&oe=6AF98B58"
+                        alt="Formación docente con enfoque en educación inclusiva" loading="lazy">
+                    <figcaption><span class="etiqueta">Formación</span>UNIFSLB promueve la formación docente con enfoque en educación inclusiva</figcaption>
+                </figure>
+                <figure class="tarjeta" data-cat="formacion" tabindex="0">
+                    <img src="https://scontent.ftru1-1.fna.fbcdn.net/v/t39.99422-6/748552264_2003674280293053_7128310982318886982_n.png?stp=dst-jpg_tt6&cstp=mx2048x1365&ctp=s2048x1365&_nc_cat=101&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=127cfc&_nc_ohc=SRS6PqCLiSMQ7kNvwFB_wCM&_nc_oc=AdoZWaQvs5qdmj1EpvM_DipEqOr-k-SbUf0KonDzhoF2qbdIFA0gj-1sMak4xn1Sxt5xs5GOyCnEwzqkMz1k0_0X&_nc_zt=14&_nc_ht=scontent.ftru1-1.fna&_nc_gid=q87jOzWmaIjF7na8p5DnxQ&_nc_ss=7b2a8&oh=00_AQQUKihlIHghw4xZWNWsNnzXMkk8ZO7PYb7x616uUEmzLw&oe=6AF98723"
+                        alt="Taller académico sobre transformación digital" loading="lazy">
+                    <figcaption><span class="etiqueta">Formación</span>UNIFSLB fortalece la formación intercultural con un taller sobre transformación digital</figcaption>
+                </figure>
+            </div>
+            <p class="nota">Toca una imagen para verla en grande.</p>
+        </section>
+
+        <section id="contacto" class="seccion contacto">
+            <h2>Contacto y enlaces</h2>
+            <p>Ingresa a la <a href="https://campus.unibagua.edu.pe/" target="_blank" rel="noopener">Intranet Universitaria</a> o síguenos en <a href="https://www.facebook.com/unifslboficial/?locale=es_LA" target="_blank" rel="noopener">Facebook</a>.</p>
+            <a class="boton boton-wsp" href="https://wa.me/51918605091?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20UNIFSLB" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Juan Roberto · 2026</p>
+        <a href="#top">Volver arriba</a>
+    </footer>
+
+    <dialog id="visor" aria-label="Imagen ampliada">
+        <button id="cerrar" aria-label="Cerrar">✕</button>
+        <img id="visor-img" alt="">
+        <p id="visor-texto"></p>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

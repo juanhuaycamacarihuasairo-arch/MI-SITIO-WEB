@@ -1,0 +1,103 @@
+:root{
+  --fondo:#f4f8f5; --texto:#12281f; --tarjeta:#fff;
+  --verde:#0e5a3a; --verde-2:#0a432b; --azul:#2f8fdc; --rojo:#d93a3f; --dorado:#f2c230;
+  --borde:rgba(14,90,58,.15); --sombra:0 10px 30px rgba(10,67,43,.14);
+}
+body.oscuro{
+  --fondo:#0d1a14; --texto:#e8f3ec; --tarjeta:#16261e;
+  --verde:#46b88a; --verde-2:#33a075; --borde:rgba(255,255,255,.12); --sombra:0 10px 30px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:5rem}
+body{margin:0;font-family:"Segoe UI",system-ui,Arial,sans-serif;line-height:1.65;background:var(--fondo);color:var(--texto);transition:background .3s,color .3s}
+img{max-width:100%;display:block}
+a{color:var(--verde)}
+:focus-visible{outline:3px solid var(--dorado);outline-offset:3px}
+
+/* MENÚ */
+.menu{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:.6rem clamp(1rem,4vw,3rem);background:var(--verde-2);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.25)}
+.marca{display:flex;align-items:center;gap:.6rem;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.03em}
+.marca img{width:42px;height:42px;border-radius:50%;background:#fff}
+.enlaces{display:flex;align-items:center;gap:1.4rem}
+.enlaces a{color:#fff;text-decoration:none;font-weight:600;padding:.2rem 0;border-bottom:2px solid transparent;transition:border-color .2s}
+.enlaces a:hover,.enlaces a.activo{border-color:var(--dorado)}
+.tema{background:rgba(255,255,255,.15);border:0;border-radius:50%;width:38px;height:38px;font-size:1.1rem;cursor:pointer;transition:transform .3s}
+.tema:hover{transform:rotate(20deg)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1fr;align-items:center;padding:clamp(2rem,6vw,5rem) clamp(1rem,5vw,4rem);background:linear-gradient(90deg,rgba(10,67,43,.9),rgba(10,67,43,.42)),url("imagenes/unifsb.png") center 48%/cover no-repeat;color:#fff;min-height:82vh}
+.hero h1{font-size:clamp(1.8rem,4.2vw,3.1rem);line-height:1.12;margin:0 0 1rem;animation:entra .9s ease both}
+.hero-texto p{font-size:1.15rem;max-width:34ch;margin:0 0 1.5rem;animation:entra .9s .15s ease both}
+.acciones{display:flex;flex-wrap:wrap;gap:.8rem;animation:entra .9s .3s ease both}
+.mensaje{min-height:1.6em;font-weight:600;color:var(--dorado);margin-top:1rem}
+@keyframes entra{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes gira{to{transform:rotate(360deg)}}
+
+/* BOTONES */
+.boton{display:inline-block;padding:.75rem 1.6rem;border:2px solid transparent;border-radius:999px;background:var(--dorado);color:#1b2a10;font:inherit;font-weight:700;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.boton:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.boton-claro{background:transparent;color:#fff;border-color:#fff}
+.contacto .boton{background:var(--verde);color:#fff}
+.contacto .boton-wsp{background:#25d366;color:#0b2e17}
+
+/* CIFRAS */
+.cifras{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));max-width:1000px;margin:-2.2rem auto 0;position:relative;z-index:2;background:var(--tarjeta);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.cifras div{padding:1.4rem 1rem;text-align:center;border-right:1px solid var(--borde)}
+.cifras div:last-child{border:0}
+.cifras strong{display:block;font-size:2.6rem;line-height:1;color:var(--verde)}
+.cifras span{font-size:.9rem;opacity:.8}
+
+/* SECCIONES */
+.seccion{max-width:1100px;margin:0 auto;padding:clamp(3rem,7vw,5rem) 1.5rem}
+.seccion h2{margin:0 0 1rem;font-size:clamp(1.6rem,3.5vw,2.2rem);line-height:1.2}
+.identidad{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+.identidad-foto img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:60% 70%;border-radius:18px;box-shadow:var(--sombra);transition:transform .6s}
+.identidad-foto:hover img{transform:scale(1.03)}
+.identidad p{max-width:58ch}
+.escudo{width:90px;margin-top:1rem}
+
+/* NOTICIAS */
+.cabecera-sec{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;margin-bottom:1.5rem}
+.cabecera-sec h2{margin:0}
+.filtros{display:flex;gap:.5rem;flex-wrap:wrap}
+.filtro{font:inherit;font-weight:600;padding:.4rem 1rem;border-radius:999px;border:2px solid var(--verde);background:transparent;color:var(--verde);cursor:pointer;transition:background .2s,color .2s}
+.filtro:hover,.filtro.activo{background:var(--verde);color:#fff}
+body.oscuro .filtro:hover,body.oscuro .filtro.activo{color:#0d1a14}
+.galeria{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem}
+.tarjeta{margin:0;background:var(--tarjeta);border-radius:14px;overflow:hidden;box-shadow:var(--sombra);cursor:zoom-in;transition:transform .25s,opacity .3s}
+.tarjeta:hover{transform:translateY(-6px)}
+.tarjeta.oculta{display:none}
+.tarjeta img{width:100%;aspect-ratio:4/3;object-fit:cover;background:linear-gradient(90deg,var(--borde),transparent,var(--borde))}
+.tarjeta figcaption{padding:1rem 1.1rem 1.2rem;font-weight:600;font-size:.98rem}
+.etiqueta{display:inline-block;margin-right:.5rem;padding:.1rem .6rem;border-radius:999px;background:var(--azul);color:#fff;font-size:.75rem;font-weight:700}
+.nota{font-size:.85rem;opacity:.7;margin-top:1rem}
+
+/* CONTACTO / PIE */
+.contacto{text-align:center}
+.contacto p{max-width:50ch;margin:0 auto 1.5rem}
+.pie{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;padding:1.5rem clamp(1rem,4vw,3rem);background:var(--verde-2);color:#fff}
+.pie p{margin:0}.pie a{color:var(--dorado)}
+
+/* VISOR */
+dialog{border:0;border-radius:14px;padding:1rem;max-width:min(92vw,900px);background:var(--tarjeta);color:var(--texto);box-shadow:0 20px 60px rgba(0,0,0,.5)}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog img{width:100%;max-height:75vh;object-fit:contain;border-radius:8px}
+dialog p{margin:.8rem 0 0;font-weight:600}
+#cerrar{position:absolute;top:.6rem;right:.6rem;width:36px;height:36px;border:0;border-radius:50%;background:var(--rojo);color:#fff;font-size:1rem;cursor:pointer}
+
+/* REVELAR AL HACER SCROLL */
+.revela{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.revela.visible{opacity:1;transform:none}
+
+@media(max-width:760px){
+  .hero,.identidad{grid-template-columns:1fr}
+  .hero{min-height:auto}
+  .enlaces{gap:.9rem;font-size:.9rem}
+  .marca span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}.revela{opacity:1;transform:none}
+}
+
+.contacto .boton-wsp{background:#25d366;color:#0b2a16}
