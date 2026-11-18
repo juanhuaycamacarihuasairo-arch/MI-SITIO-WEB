@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contacto · UNIFSLB</title>
+    <meta name="description" content="Intranet, redes sociales y WhatsApp de la Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua.">
+    <meta name="author" content="Juan Roberto">
+    <meta name="theme-color" content="#0a432b">
+        <meta property="og:title" content="Contacto · UNIFSLB">
+    <meta property="og:description" content="Intranet, redes sociales y WhatsApp de la UNIFSLB.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagenes/hero.webp">
+    <link rel="icon" href="imagenes/logo-uni.png" type="image/png">
+        <script>try{var t=localStorage.getItem("tema");if(t?t==="oscuro":matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.classList.add("oscuro")}catch(e){}</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header class="top" id="top">
+        <nav class="menu" aria-label="Principal">
+            <a class="marca" href="index.html"><img src="imagenes/logo-uni.webp" alt="Escudo UNIFSLB" width="42" height="42"><span>UNIFSLB</span></a>
+            <button id="btn-menu" class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="enlaces">☰</button>
+            <div class="enlaces" id="enlaces">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#identidad">Identidad</a>
+                <a href="index.html#noticias">Noticias</a>
+                <a href="contacto.html" aria-current="page">Contacto</a>
+                <button id="btn-tema" class="tema" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar tema">🌙</button>
+            </div>
+        </nav>
+
+        <section class="hero hero-corto">
+            <div class="hero-texto">
+                <h1>Contacto y enlaces</h1>
+                <p>Elige el canal que prefieras para comunicarte con la universidad.</p>
+            </div>
+        </section>
+    </header>
+
+    <main id="contenido">
+        <section class="seccion contacto">
+            <h2>Canales oficiales</h2>
+            <ul class="canales">
+                <li>
+                    <h3>Intranet universitaria</h3>
+                    <p>Accede al campus virtual con tu cuenta institucional.</p>
+                    <a class="boton" href="https://campus.unibagua.edu.pe/" target="_blank" rel="noopener">Abrir intranet<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                </li>
+                <li>
+                    <h3>Facebook</h3>
+                    <p>Noticias, eventos y comunicados de la UNIFSLB.</p>
+                    <a class="boton" href="https://www.facebook.com/unifslboficial/?locale=es_LA" target="_blank" rel="noopener">Ver Facebook<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                </li>
+                <li>
+                    <h3>WhatsApp</h3>
+                    <p>Escribe tu consulta y te responderán por mensaje.</p>
+                    <a class="boton boton-wsp" href="https://wa.me/51918605091?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20UNIFSLB" target="_blank" rel="noopener">Escribir por WhatsApp<span class="sr-only"> (se abre en otra pestaña)</span></a>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Elaborado por Juan Roberto · 2026 · Fotografías de la <a href="https://www.facebook.com/unifslboficial/" target="_blank" rel="noopener">página oficial de la UNIFSLB</a></p>
+        <a href="#top">Volver arriba</a>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

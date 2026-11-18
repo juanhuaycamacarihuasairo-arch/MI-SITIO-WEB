@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UNIFSLB · Universidad Intercultural de Bagua</title>
+    <meta name="description" content="Sitio educativo de la Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua: identidad, noticias y contacto.">
+    <meta name="author" content="Juan Roberto">
+    <meta name="theme-color" content="#0a432b">
+        <meta property="og:title" content="UNIFSLB · Universidad Intercultural de Bagua">
+    <meta property="og:description" content="Identidad, noticias y contacto de la Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="imagenes/hero.webp">
+    <link rel="icon" href="imagenes/logo-uni.png" type="image/png">
+        <script>try{var t=localStorage.getItem("tema");if(t?t==="oscuro":matchMedia("(prefers-color-scheme: dark)").matches)document.documentElement.classList.add("oscuro")}catch(e){}</script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <a class="salto" href="#contenido">Saltar al contenido</a>
+    <header class="top" id="top">
+        <nav class="menu" aria-label="Principal">
+            <a class="marca" href="index.html"><img src="imagenes/logo-uni.webp" alt="Escudo UNIFSLB" width="42" height="42"><span>UNIFSLB</span></a>
+            <button id="btn-menu" class="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="enlaces">☰</button>
+            <div class="enlaces" id="enlaces">
+                <a href="index.html" aria-current="page">Inicio</a>
+                <a href="index.html#identidad">Identidad</a>
+                <a href="index.html#noticias">Noticias</a>
+                <a href="contacto.html">Contacto</a>
+                <button id="btn-tema" class="tema" type="button" aria-label="Cambiar a modo oscuro" title="Cambiar tema">🌙</button>
+            </div>
+        </nav>
+
+        <section class="hero" id="inicio">
+            <div class="hero-texto">
+                <h1>Universidad Nacional Intercultural Fabiola Salazar Leguía de Bagua</h1>
+                <p>Formamos profesionales que honran la diversidad de los pueblos amazónicos.</p>
+                <div class="acciones">
+                    <a class="boton" href="#noticias">Ver noticias</a>
+                    <button id="btn-saludo" class="boton boton-claro" type="button">Saludar</button>
+                </div>
+                <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+            </div>
+        </section>
+    </header>
+
+    <main id="contenido">
+        <section class="cifras" aria-label="Datos de la universidad">
+            <div><strong data-meta="4" data-sufijo=".ª">4.ª</strong><span>edición del Congreso Internacional de Investigación</span></div>
+            <div><strong data-meta="3">3</strong><span>novedades académicas recientes</span></div>
+            <div><strong data-meta="100" data-sufijo="%">100%</strong><span>enfoque intercultural</span></div>
+        </section>
+
+        <section id="identidad" class="seccion identidad">
+            <div class="identidad-foto">
+                <img src="imagenes/campus-640.webp" srcset="imagenes/campus-640.webp 640w, imagenes/campus.webp 1070w" sizes="(max-width:860px) 92vw, 540px" alt="Estudiantes y docentes de la UNIFSLB reunidos en el campus" width="1070" height="795" loading="lazy" decoding="async">
+            </div>
+            <div>
+                <h2>Una universidad que se viste de su gente</h2>
+                <p>En Bagua, la educación superior se construye con la lengua, la historia y los saberes de las comunidades. Nuestro escudo une los colores de la región con la figura que representa nuestra raíz amazónica.</p>
+                <p>Conoce el campus, a nuestros estudiantes y las actividades que impulsan la investigación y la formación docente.</p>
+                <ul class="insignias">
+                    <li><img src="imagenes/logo-uni.webp" alt="" width="64" height="64" loading="lazy"><span>Escudo de la UNIFSLB</span></li>
+                    <li><img src="imagenes/CARRERA.webp" alt="" width="64" height="64" loading="lazy"><span>Educación Tecnológica, Computación e Informática</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="noticias" class="seccion">
+            <div class="cabecera-sec">
+                <h2>Noticias y eventos</h2>
+                <div class="filtros" role="group" aria-label="Filtrar noticias">
+                    <button class="filtro activo" type="button" data-filtro="todas" aria-pressed="true">Todas</button>
+                    <button class="filtro" type="button" data-filtro="investigacion" aria-pressed="false">Investigación</button>
+                    <button class="filtro" type="button" data-filtro="formacion" aria-pressed="false">Formación</button>
+                </div>
+            </div>
+
+            <div class="galeria">
+                <figure class="tarjeta" data-cat="investigacion" style="--enfoque:50% 40%" tabindex="0" role="button" aria-label="Ampliar imagen: IV Congreso Internacional de Investigación Científica con Enfoque Intercultural">
+                    <div class="marco"><img src="imagenes/congreso-640.webp" srcset="imagenes/congreso-640.webp 640w, imagenes/congreso.webp 1070w" sizes="(max-width:720px) 92vw, (max-width:1100px) 45vw, 340px" data-grande="imagenes/congreso.webp" alt="Asistentes al IV Congreso Internacional de Investigación Científica con Enfoque Intercultural, posando en el auditorio" width="1070" height="650" loading="lazy" decoding="async"></div>
+                    <figcaption><span class="etiqueta">Investigación</span> IV Congreso Internacional de Investigación Científica con Enfoque Intercultural</figcaption>
+                </figure>
+                <figure class="tarjeta" data-cat="formacion" style="--enfoque:50% 35%" tabindex="0" role="button" aria-label="Ampliar imagen: UNIFSLB promueve la formación docente con enfoque en educación inclusiva">
+                    <div class="marco"><img src="imagenes/inclusiva-640.webp" srcset="imagenes/inclusiva-640.webp 640w, imagenes/inclusiva.webp 1070w" sizes="(max-width:720px) 92vw, (max-width:1100px) 45vw, 340px" data-grande="imagenes/inclusiva.webp" alt="Docentes y estudiantes conversando en un patio de la universidad durante una jornada de educación inclusiva" width="1070" height="795" loading="lazy" decoding="async"></div>
+                    <figcaption><span class="etiqueta">Formación</span> UNIFSLB promueve la formación docente con enfoque en educación inclusiva</figcaption>
+                </figure>
+                <figure class="tarjeta" data-cat="formacion" style="--enfoque:50% 30%" tabindex="0" role="button" aria-label="Ampliar imagen: UNIFSLB fortalece la formación intercultural con un taller sobre transformación digital">
+                    <div class="marco"><img src="imagenes/taller-640.webp" srcset="imagenes/taller-640.webp 640w, imagenes/taller.webp 1070w" sizes="(max-width:720px) 92vw, (max-width:1100px) 45vw, 340px" data-grande="imagenes/taller.webp" alt="Tres participantes del taller sobre transformación digital frente a una pantalla y la bandera del Perú" width="1070" height="650" loading="lazy" decoding="async"></div>
+                    <figcaption><span class="etiqueta">Formación</span> UNIFSLB fortalece la formación intercultural con un taller sobre transformación digital</figcaption>
+                </figure>
+            </div>
+            <p class="nota">Toca o presiona Enter sobre una imagen para verla en grande. Usa las flechas para pasar a la siguiente.</p>
+        </section>
+
+        <section class="seccion contacto-aviso">
+            <h2>¿Quieres más información?</h2>
+            <p>Encuentra la intranet, nuestras redes y el WhatsApp de la universidad.</p>
+            <a class="boton" href="contacto.html">Ir a contacto</a>
+        </section>
+    </main>
+
+    <footer class="pie">
+        <p>Elaborado por Juan Roberto · 2026</p>
+        <a href="#top">Volver arriba</a>
+    </footer>
+
+    <dialog id="visor" aria-label="Imagen ampliada">
+        <button id="cerrar" class="visor-btn" type="button" aria-label="Cerrar imagen ampliada">✕</button>
+        <button id="prev" class="visor-btn" type="button" aria-label="Imagen anterior">‹</button>
+        <button id="sig" class="visor-btn" type="button" aria-label="Imagen siguiente">›</button>
+        <img id="visor-img" src="" alt="" width="1070" height="795">
+        <p id="visor-texto"></p>
+    </dialog>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
