@@ -135,8 +135,113 @@ if (plantillaInteracciones && noticiasSociales.length) {
   const claveSocial = configSocial && typeof configSocial.anonKey === "string" ? configSocial.anonKey.trim() : "";
 
   if (!urlSocial || !claveSocial) {
+    const claveDatosLocales = "unifslb-social-v1";
+    const estado = (noticia, texto) => {
+      noticia.querySelector(".estado-social").textContent = texto;
+    };
+
+    function leerDatosLocales() {
+      try {
+        const datos = JSON.parse(localStorage.getItem(claveDatosLocales));
+        return datos && typeof datos === "object"
+          ? { likes: datos.likes || {}, comentarios: datos.comentarios || {} }
+          : { likes: {}, comentarios: {} };
+      } catch (error) {
+        return { likes: {}, comentarios: {} };
+      }
+    }
+
+    function guardarDatosLocales(datos) {
+      localStorage.setItem(claveDatosLocales, JSON.stringify(datos));
+    }
+
+    function pintarComentariosLocales(noticia) {
+      const datos = leerDatosLocales();
+      const comentarios = datos.comentarios[noticia.dataset.noticia] || [];
+      const lista = noticia.querySelector(".lista-comentarios");
+      lista.replaceChildren();
+
+      comentarios.slice().reverse().forEach((comentario) => {
+        const elemento = document.createElement("li");
+        elemento.className = "comentario";
+        const autor = document.createElement("strong");
+        autor.textContent = comentario.author_name;
+        const texto = document.createElement("p");
+        texto.textContent = comentario.body;
+        const fecha = document.createElement("time");
+        const fechaComentario = new Date(comentario.created_at);
+        if (!Number.isNaN(fechaComentario.valueOf())) {
+          fecha.dateTime = comentario.created_at;
+          fecha.textContent = new Intl.DateTimeFormat("es-PE", {
+            dateStyle: "medium",
+            timeStyle: "short"
+          }).format(fechaComentario);
+        }
+        elemento.append(autor, texto, fecha);
+        lista.append(elemento);
+      });
+      estado(noticia, comentarios.length ? "" : "Aún no hay comentarios. ¡Sé el primero!");
+    }
+
+    noticiasSociales.forEach((noticia) => {
+      const botonCorazon = noticia.querySelector(".boton-corazon");
+      const formulario = noticia.querySelector(".form-comentario");
+      const botonPublicar = formulario.querySelector(".boton-publicar");
+      const datos = leerDatosLocales();
+      const gusta = Boolean(datos.likes[noticia.dataset.noticia]);
+
+      botonCorazon.disabled = false;
+      botonPublicar.disabled = false;
+      botonCorazon.setAttribute("aria-pressed", String(gusta));
+      botonCorazon.querySelector("[data-icono-corazon]").textContent = gusta ? "♥" : "♡";
+      botonCorazon.querySelector("[data-texto-corazon]").textContent = gusta ? "Te gusta" : "Me gusta";
+      botonCorazon.querySelector("[data-contador-corazones]").textContent = gusta ? "1" : "0";
+      pintarComentariosLocales(noticia);
+
+      botonCorazon.addEventListener("click", () => {
+        const datosActuales = leerDatosLocales();
+        const activo = !datosActuales.likes[noticia.dataset.noticia];
+        datosActuales.likes[noticia.dataset.noticia] = activo;
+        if (!activo) delete datosActuales.likes[noticia.dataset.noticia];
+        guardarDatosLocales(datosActuales);
+
+        botonCorazon.setAttribute("aria-pressed", String(activo));
+        botonCorazon.querySelector("[data-icono-corazon]").textContent = activo ? "♥" : "♡";
+        botonCorazon.querySelector("[data-texto-corazon]").textContent = activo ? "Te gusta" : "Me gusta";
+        botonCorazon.querySelector("[data-contador-corazones]").textContent = activo ? "1" : "0";
+        estado(noticia, "");
+      });
+
+      formulario.addEventListener("submit", (evento) => {
+        evento.preventDefault();
+        const nombre = formulario.elements.nombre.value.trim().slice(0, 40) || "Visitante";
+        const comentario = formulario.elements.comentario.value.trim();
+        if (comentario.length < 3) {
+          estado(noticia, "Escribe un comentario de al menos 3 caracteres.");
+          return;
+        }
+
+        const datosActuales = leerDatosLocales();
+        if (!datosActuales.comentarios[noticia.dataset.noticia]) {
+          datosActuales.comentarios[noticia.dataset.noticia] = [];
+        }
+        datosActuales.comentarios[noticia.dataset.noticia].push({
+          author_name: nombre,
+          body: comentario,
+          created_at: new Date().toISOString()
+        });
+        datosActuales.comentarios[noticia.dataset.noticia] =
+          datosActuales.comentarios[noticia.dataset.noticia].slice(-50);
+        guardarDatosLocales(datosActuales);
+
+        formulario.reset();
+        pintarComentariosLocales(noticia);
+        estado(noticia, "Tu comentario ya está publicado.");
+      });
+    });
+
     avisoSocial.hidden = false;
-    avisoSocial.textContent = "Comentarios y corazones estarán disponibles cuando se configure la conexión de la base de datos.";
+    avisoSocial.textContent = "Modo local activo: los likes y comentarios se guardan en este navegador.";
   } else if (!window.supabase || typeof window.supabase.createClient !== "function") {
     avisoSocial.hidden = false;
     avisoSocial.textContent = "No se pudo cargar el servicio de comentarios. Comprueba tu conexión a internet e inténtalo de nuevo.";
@@ -288,4 +393,4 @@ if (plantillaInteracciones && noticiasSociales.length) {
 
     conectarInteracciones();
   }
-}
+}  
