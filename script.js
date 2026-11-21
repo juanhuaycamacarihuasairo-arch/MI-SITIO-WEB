@@ -393,4 +393,4 @@ if (plantillaInteracciones && noticiasSociales.length) {
 
     conectarInteracciones();
   }
-}  
+}
